@@ -1,4 +1,7 @@
 """
+    --------------------------------------------------------------------------------------
+    networkUtils.py
+    --------------------------------------------------------------------------------------
     Here are a few useful shortcut functions for working with networks.
     
     Some examples of use:
@@ -10,6 +13,16 @@
         networkUtils.configureAP("atomant", "up up and away!")
         ap = networkUtils.getAccesspoint()
         print(ap.ifconfig())
+
+        # Connect to a wifi network in Station mode
+        import networkUtils
+        networkUtils.connectToNetwork("network name", "password")
+        station = networkUtils.getStation()
+        print(station.ifconfig())
+        print(station.isconnected())
+
+    Author:  David Alexis (2019)
+    -------------------------------------------------------------------------------------- 
 """
 
 def getAccesspoint():
@@ -17,10 +30,12 @@ def getAccesspoint():
 
     return network.WLAN(network.AP_IF)
 
+
 def getStation():
     import network
 
     return network.WLAN(network.STA_IF)
+
 
 def configureAP(newEssid, newPassword):
     ap = getAccesspoint()
@@ -33,8 +48,15 @@ def configureAP(newEssid, newPassword):
 
     print("Configured accesspoint %s" % (ap.config('essid')))
 
-def connectToNetwork(networkName, password):
+
+def connectToNetwork(networkName, password, disableAP=True):
     import time
+    
+    if disableAP == True:
+        ap = getAccesspoint()
+        
+        if ap.active():
+            ap.active(False)
 
     station = getStation()
 

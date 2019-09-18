@@ -1,6 +1,12 @@
 """
+    --------------------------------------------------------------------------------------
+    httpServer.py
+    --------------------------------------------------------------------------------------
     This script implements a simple web site on the ESP8266.
     It displays the current value of each of the available pins on the device.
+
+    Author:  David Alexis (2019)
+    -------------------------------------------------------------------------------------- 
 """
 
 import socket
@@ -32,11 +38,11 @@ while True:
 
     while True:
         line = cl_file.readline()
+        
         if not line or line == b'\r\n':
             break
 
-    rows = ['<tr><td>%s</td><td>%d</td></tr>' %
-            (str(p), p.value()) for p in pins]
+    rows = ['<tr><td>%s</td><td>%d</td></tr>' % (str(p), p.value()) for p in pins]
     response = html % '\n'.join(rows)
     cl.send(response)
     cl.close()

@@ -1,11 +1,23 @@
-# This file is executed on every boot (including wake-boot from deepsleep)
-#import esp
-# esp.osdebug(None)
+"""
+    --------------------------------------------------------------------------------------
+    boot.py
+    --------------------------------------------------------------------------------------
+    This file (boot.py) is executed on every boot (including wake-boot from deepsleep).
+    The MicroPython runtime first looks for a file called boot.py, and executes if it exists.
+    It then looks for a file called main.py, which should contain the entry point for the
+    main functionality of your project.
+
+    Author:  David Alexis (2019)
+    --------------------------------------------------------------------------------------
+"""
+
+import esp
 import uos
 import machine
 # uos.dupterm(None, 1) # disable REPL on UART(0)
 import gc
 
+esp.osdebug(None)
 gc.collect()
 
 
