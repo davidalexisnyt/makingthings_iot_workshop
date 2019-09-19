@@ -4,6 +4,9 @@
     --------------------------------------------------------------------------------------
     Serves a web page from the ESP8266 that allows remotely turning a light on and off
 
+    The bulk of this example was taken from a great Random Nerd Tutorials post:
+    https://randomnerdtutorials.com/esp32-esp8266-micropython-web-server/
+
     Author:  David Alexis (2019)
     -------------------------------------------------------------------------------------- 
 """
