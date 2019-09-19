@@ -16,7 +16,7 @@ import networkCredentials as nc
 import networkUtils
 from machine import Pin
 
-led = Pin(2, Pin.OUT)
+led = Pin(5, Pin.OUT)
 
 def htmlPage():
     if led.value() == 1:
@@ -29,7 +29,6 @@ def htmlPage():
             <head>
                 <title>Remote Light Switch</title>
                 <meta name="viewport" content="width=device-width, initial-scale=1">
-                <link rel="icon" href="data:,">
                 <style>
                     html {
                         font-family: Helvetica;

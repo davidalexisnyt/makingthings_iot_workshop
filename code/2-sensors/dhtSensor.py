@@ -2,7 +2,7 @@
     --------------------------------------------------------------------------------------
     dhtSensor.py
     --------------------------------------------------------------------------------------
-    This script shows hot to use the DHT 11 digital humidity and temperature sensor.
+    This script shows hot to use the DHT11 digital humidity and temperature sensor.
     These sensors cost around $3 or $4.
     The sensor provides temperature values in Celcius, which can then be easity converted
     to Fahrenheit if needed.  The sensors can only read measurements every 2 seconds, so
