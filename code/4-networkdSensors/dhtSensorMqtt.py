@@ -44,6 +44,7 @@ def connect():
     
     return client
 
+
 # ------- Main program execution starts here --------
 
 mqttClient = connect()

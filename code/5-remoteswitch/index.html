@@ -21,7 +21,7 @@
 
             .button {
                 display: inline-block;
-                background-color: #e7bd3b;
+                background-color: #4286f4;
                 border: none;
                 border-radius: 4px;
                 color: white;
@@ -30,18 +30,26 @@
                 font-size: 30px;
                 margin: 2px;
                 cursor: pointer;
+                width: 150px;
             }
-
-            .button2 {
-                background-color: #4286f4;
+            
+            .ledState {
+                text-transform: uppercase;
             }
         </style>
     </head>
 
     <body>
         <h1>Remote Light Switch</h1>
-        <p>Light is currently <strong>{LED_STATE}</strong></p>
-        <p><a href="/?led=on"><button class="button">ON</button></a></p>
-        <p><a href="/?led=off"><button class="button button2">OFF</button></a></p>
+        <p>
+            Light is currently <strong><span class="ledState">{LED_STATE}</span></strong>
+        </p>
+        <p>
+            <a href="/?led={NEXT_LED_STATE}">
+                <button class="button">
+                    <span class="ledState">{NEXT_LED_STATE}</span>
+                </button>
+            </a>
+        </p>
     </body>
 </html>

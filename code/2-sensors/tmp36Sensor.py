@@ -3,7 +3,7 @@
     tmp36Sensor.py
     --------------------------------------------------------------------------------------
     Demonstrates how to use the TMP36 analog temperature sensor.  These sensors are
-    relatively cheap, very accurate, and easy to use.  It provides temperature readings as
+    relatively cheap and easy to use.  It provides temperature readings as
     a relative voltage, which is then converted to a Celcius value.
 
     Author:  David Alexis (2019)

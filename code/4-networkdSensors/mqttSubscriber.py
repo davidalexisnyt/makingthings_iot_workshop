@@ -12,11 +12,11 @@
 import network
 import machine
 import time
-from umqtt.robust import MQTTClient
 import os
 import gc
 import sys
 import ubinascii
+from umqtt.robust import MQTTClient
 
 # WiFi connection information
 WIFI_SSID = 'makingthings-iot'
@@ -24,7 +24,6 @@ WIFI_PASSWORD = 'rusty-rabbit'
 mqtt_server = '10.3.141.1'
 mqtt_feedname = b'sensors/environment/office'
 
-gc.collect()
 
 def subscription_handler(topic, msg):
     print(topic, " :: ", msg)
@@ -54,6 +53,7 @@ def connect():
 
 # ------ Main script execution starts here ------
 
+gc.collect()
 
 client_id = b"receiver_{}".format(ubinascii.hexlify(machine.unique_id()))
 topic = b'temperature'
